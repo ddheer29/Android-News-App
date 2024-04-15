@@ -90,6 +90,15 @@ const SavedScreen = () => {
         }, [navigation, urlList])
     )
 
+    const clearSavedArticles = async () => {
+        try {
+            await AsyncStorage.removeItem('savedArticles');
+            setSavedArticle([]);
+        } catch (error) {
+            console.log("Error clearing saved articles", error);
+        }
+    }
+
     const renderItem = ({ item, index }) => {
         return (
             <TouchableOpacity
@@ -129,7 +138,7 @@ const SavedScreen = () => {
                                 fontSize: hp(1.7),
                             }}
                         >
-                            {item.title.length > 50
+                            {item?.title?.length > 50
                                 ? item.title.slice(0, 50) + "..."
                                 : item.title}
                         </Text>
@@ -163,7 +172,10 @@ const SavedScreen = () => {
                     Saved Articles
                 </Text>
                 <TouchableOpacity className='bg-green-800 py-2 px-4 rounded-lg'>
-                    <Text className='text-white dark:text-white'>
+                    <Text 
+                    className='text-white dark:text-white'
+                    onPress={clearSavedArticles}
+                    >
                         Clear
                     </Text>
                 </TouchableOpacity>

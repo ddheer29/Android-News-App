@@ -67,10 +67,10 @@ const AppNavigation = () => {
     }
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='Discover' screenOptions={{
+            <Stack.Navigator initialRouteName='Splashs' screenOptions={{
                 headerShown: false
             }}>
-                <Stack.Screen name='Home' component={TabNavigator} />
+                <Stack.Screen name='HomeTab' component={TabNavigator} />
                 <Stack.Screen name='Splashs' component={SplashScreens} />
                 <Stack.Screen name='Welcome' component={WelcomeScreen} />
                 <Stack.Screen name='Search' component={SearchScreen} />

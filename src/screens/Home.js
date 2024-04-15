@@ -40,7 +40,6 @@ const Home = () => {
             setrecommendedNewsLoading(true);
             const res = await axios.get(`${apiBaseUrl}/top-headlines?country=us&category=business&apiKey=${newsApiKey}`)
             setrecommendedNewsLoading(false);
-            // console.log(res.data.articles)
             setRecommendedNews(res.data.articles)
         } catch (error) {
             console.log("Errr while fetching recommended news", error.message)
@@ -52,7 +51,7 @@ const Home = () => {
     }, [])
 
     return (
-        <SafeAreaView>
+        <SafeAreaView className='bg-white flex-1 dark:bg-neutral-900'>
             <StatusBar style={colorScheme == 'dark' ? 'light' : 'dark'} />
             <Header />
             {

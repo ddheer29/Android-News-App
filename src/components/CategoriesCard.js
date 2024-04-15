@@ -26,7 +26,7 @@ const CategoriesCard = ({ categories, activeCategory, handleCategoryChange }) =>
                                 className='flex items-center space-y-1'
                             >
                                 <View className={`rounded-full py-2 px-4 ${activeButtonClass}`}>
-                                    <Text className={`capitalize ${activeTextClass}`} style={{ fontSize: hp(1.6) }}>
+                                    <Text className={`capitalize ${activeTextClass} dark:text-white`} style={{ fontSize: hp(1.6) }}>
                                         {category.title}
                                     </Text>
                                 </View>
